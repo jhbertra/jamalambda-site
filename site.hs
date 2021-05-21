@@ -1,13 +1,14 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 
+import Control.Monad (forM_)
 import Data.Semigroup ((<>))
 import Hakyll
 
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-  match "images/*" $ do
+  match ("images/*" .||. "fonts/*" ) $ do
     route idRoute
     compile copyFileCompiler
 
