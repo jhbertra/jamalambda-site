@@ -1,9 +1,13 @@
 :root {
-  --bright-navy-blue: hsla(210, 48%, 47%, 1);
-  --eerie-black: #232c31;
-  --snow: hsla(315, 100%, 99%, 1);
-  --mauve-taupe: hsla(330, 22%, 47%, 1);
-  --st-patricks-blue: hsla(234, 64%, 28%, 1);
+  --primary-100: #c5beff;
+  --primary-200: #988bff;
+  --primary-400: #6a58ff;
+  --primary-700: #533fff;
+  --secondary-100: #ffbbb8;
+  --secondary-200: #ff8a85;
+  --secondary-400: #ff5952;
+  --secondary-700: #ff5952;
+  --dark-base: #121212;
 }
 
 @font-face {
@@ -71,61 +75,108 @@
   font-style: italic;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
   margin: 0px;
-  font-size: 1.6rem;
-  color: var(--snow);
-  background-color: var(--eerie-black);
+  color: white;
+  background-color: var(--dark-base);
   font-family: "Lato", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.031rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+p {
+  opacity: 0.60;
 }
 
 header {
-  background-color: var(--bright-navy-blue);
+  background-color: rgb(255, 255, 255, 0.12);
   display: flex;
-  padding: 20px 16px;
+  padding: 16px 24px;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo a {
-  font-size: 2.5rem;
-  color: var(--snow);
+header a {
+  color: white !important;
   text-decoration: none;
 }
+
+.logo a {
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  opacity: 0.87;
+  text-transform: capitalize;
+  line-height: 24px;
+}
+
+.logo a:hover {
+  opacity: 1;
+}
+
+.logo a:active {
+  opacity: 0.60;
+}
+
 nav {
+  display: flex;
+  align-items: center;
   text-align: right;
+  margin: auto 0;
 }
 
 nav * + * {
-  margin-left: 8px;;
+  margin-left: 24px;
 }
 
 nav a {
-  font-size: 1.8rem;
-  font-weight: 300;
-  color: var(--snow);
-  text-decoration: none;
+  font-size: 0.875rem;
+  opacity: 0.60;
   text-transform: uppercase;
+  letter-spacing: 0.078rem;
+}
+
+nav a:hover {
+  opacity: 0.87;
+}
+
+nav a:active {
+  opacity: 0.46;
 }
 
 footer {
   margin-top: 3rem;
+  text-align: center;
   padding: 1.2rem 0;
-  border-top: 0.2rem solid #000;
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 0.875rem;
+  letter-spacing: 0.016rem;
+  justify-self: end;
+}
+
+footer > span {
+  opacity: 0.46;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  opacity: 0.87;
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 3.75rem;
+  font-weight: 300;
+  letter-spacing: -0.0.31;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.125rem;
+  letter-spacing: 0.016rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
 }
 
 article .header {
@@ -135,7 +186,35 @@ article .header {
 }
 
 main {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
   padding: 16px 0;
+  flex-grow: 1;
+}
+
+main::before {
+  background-color: var(--primary-200);
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  left: 0;
+  opacity: 0.06;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
+a {
+  transition: opacity 0.1s;
+  color: var(--secondary-200);
+  text-decoration: none;
+  opacity: 0.87;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+a:active {
+  opacity: 0.60;
 }
