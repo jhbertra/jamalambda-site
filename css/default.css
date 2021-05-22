@@ -7,7 +7,9 @@ body {
   letter-spacing: 0.031rem;
 }
 
-p {
+p,
+li,
+span {
   opacity: 0.6;
 }
 
