@@ -8,4 +8,8 @@
   --secondary-400: #ff5952;
   --secondary-700: #ff5952;
   --dark-base: #121212;
+  --em-max: #ffffffff;
+  --em-hi: #ffffffde;
+  --em-mid: #ffffff99;
+  --em-low: #ffffff78;
 }
