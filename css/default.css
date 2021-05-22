@@ -5,21 +5,18 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   letter-spacing: 0.031rem;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 p {
-  opacity: 0.60;
+  opacity: 0.6;
 }
 
 header {
   background-color: rgb(255, 255, 255, 0.12);
   display: flex;
-  padding: 16px 24px;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  padding: 16px;
+  align-items: flex-start;
 }
 
 header a {
@@ -32,7 +29,6 @@ header a {
   letter-spacing: 0.1rem;
   opacity: 0.87;
   text-transform: capitalize;
-  line-height: 24px;
 }
 
 .logo a:hover {
@@ -40,23 +36,23 @@ header a {
 }
 
 .logo a:active {
-  opacity: 0.60;
+  opacity: 0.6;
 }
 
 nav {
   display: flex;
-  align-items: center;
-  text-align: right;
-  margin: auto 0;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-nav * + * {
-  margin-left: 24px;
+nav * + *,
+header * + * {
+  margin-top: 24px;
 }
 
 nav a {
   font-size: 0.875rem;
-  opacity: 0.60;
+  opacity: 0.6;
   text-transform: uppercase;
   letter-spacing: 0.078rem;
 }
@@ -75,21 +71,26 @@ footer {
   padding: 1.2rem 0;
   font-size: 0.875rem;
   letter-spacing: 0.016rem;
-  justify-self: end;
 }
 
 footer > span {
   opacity: 0.46;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   opacity: 0.87;
+  margin: 1.5rem 0;
 }
 
 h1 {
   font-size: 3.75rem;
   font-weight: 300;
-  letter-spacing: -0.0.31;
+  letter-spacing: -0.31;
 }
 
 h2 {
@@ -103,16 +104,14 @@ h3 {
 }
 
 article .header {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-style: italic;
-  color: #555;
+  opacity: 0.46;
 }
 
 main {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 16px 0;
-  flex-grow: 1;
+  padding: 16px;
+  max-width: 768px;
 }
 
 main::before {
@@ -139,5 +138,40 @@ a:hover {
 }
 
 a:active {
-  opacity: 0.60;
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: stretch;
+  }
+
+  header {
+    flex-direction: row;
+    padding: 16px 24px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  nav * + *,
+  header * + * {
+    margin-top: 0px;
+  }
+
+  nav * + * {
+    margin-left: 24px;
+  }
+
+  main {
+    flex-grow: 1;
+    align-self: center;
+  }
 }
