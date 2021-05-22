@@ -80,6 +80,30 @@ footer > span {
   color: var(--em-low);
 }
 
+footer > ul {
+  font-size: 1.25rem;
+  margin: 8px;
+  padding: 0;
+}
+
+footer > ul > li {
+  display: inline-block;
+}
+
+footer > ul > li > a {
+  color: var(--em-mid);
+  opacity: 1 !important;
+  padding: 8px;
+}
+
+footer > ul > li > a:hover {
+  color: var(--em-hi);
+}
+
+footer > ul > li > a:active {
+  color: var(--em-low);
+}
+
 h1,
 h2,
 h3,
