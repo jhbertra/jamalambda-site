@@ -5,7 +5,9 @@ title: About
 I am a software developer living in Ottawa, ON who helps companies build robust,
 stable, and maintainable systems. I build better software through the
 application of mathematics, functional programming, algebraic data types, and
-immutable architecture.
+immutable architecture. I currently work for Pagecloud, a company in Ottawa that
+provides powerful yet intuitive visual web-page design software. Check us out at
+[www.pagecloud.com](https://www.pagecloud.com).
 
 I started my career working primarily with object-oriented programming languages
 like Java, C#, and C++, and I have always had a strong interest in finding better
