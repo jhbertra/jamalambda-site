@@ -9,7 +9,6 @@ body {
 p,
 li,
 span {
-  line-height: 1.3rem;
   color: var(--em-mid);
 }
 
