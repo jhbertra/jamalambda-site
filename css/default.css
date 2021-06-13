@@ -6,6 +6,30 @@ body {
   letter-spacing: 0.031rem;
 }
 
+code {
+  color: var(--secondary-200);
+}
+
+pre > code {
+  color: var(--em-hi);
+}
+
+pre {
+  background-color: var(--dark-base);
+  border-radius: 0.5rem;
+  border-color: var(--em-low);
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
 p,
 li,
 span {
@@ -111,7 +135,6 @@ h5,
 h6 {
   font-family: "Lato", sans-serif;
   color: var(--em-hi);
-  margin: 1.5rem 0;
 }
 
 h1 {
@@ -138,7 +161,7 @@ article .header {
 }
 
 main {
-  padding: 16px;
+  padding: 0 16px;
   max-width: 768px;
 }
 
@@ -201,5 +224,6 @@ a:active {
   main {
     flex-grow: 1;
     align-self: center;
+    padding: 0 24px;
   }
 }
