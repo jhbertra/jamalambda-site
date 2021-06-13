@@ -8,7 +8,7 @@ import Hakyll
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyllWith cfg $ do
-  match ( "images/*" .||. "fonts/*") $ do
+  match ("images/*" .||. "fonts/*") $ do
     route idRoute
     compile copyFileCompiler
 
@@ -61,7 +61,11 @@ main = hakyllWith cfg $ do
   match "templates/*" $ compile templateBodyCompiler
 
 cfg :: Configuration
-cfg = defaultConfiguration { previewPort = 8080 }
+cfg =
+  defaultConfiguration
+    { previewPort = 8080,
+      destinationDirectory = "docs"
+    }
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
