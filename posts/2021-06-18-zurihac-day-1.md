@@ -94,8 +94,10 @@ genState = do
   execStateT (replicateM_ numActions $ nextState =<< (lift . genAction) =<< get) initialState
 ```
 
-Unrelated - I need to figure out how to get syntax highlighting for my Markdown. And also that Haskell code is totally
+~~Unrelated - I need to figure out how to get syntax highlighting for my Markdown.~~ And also that Haskell code is totally
 untested, no idea if it works or even compiles...
+
+EDIT: I figured out syntax highlighting!
 
 What are the kinds of things you might want to test in a system like this? Well, you will undoubtedly have invariants
 you want to always hold. If you are managing a cryptocurrency for instance, you want to make sure that money goes to the
