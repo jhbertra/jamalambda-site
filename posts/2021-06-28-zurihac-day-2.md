@@ -65,18 +65,18 @@ Optics are a family of tools used to create composable pathways into deeply nest
 You might notice that I've been rather vague about what it means for an optic to "focus" on some data. That's because optics don't do anything by themselves. All they do is describe how to access some data inside a data structure. So if you want to use an optic, you need 3 ingredients: a data structure to focus on, the right optic to find the focus you are interested in and an operation to manipulate it. For example, given a student enrollment record (data structure), focus on their student ID number with a lens (optic), and set it to 0000000000000 (operation). The code for this would look like this:
 
 ```haskell
-set                                     -- operation
-    studentId                     -- optic
-    "0000000000000"      -- parameter for the operation
-    enrollmentRecord        -- data structure
+set                  -- operation
+    studentId        -- optic
+    "0000000000000"  -- parameter for the operation
+    enrollmentRecord -- data structure
 ```
 
 The thing that really makes optics tick, though, is that they compose. For example, suppose you wanted to steal the IDs from a list of student records. In that case, if you can find a traversal that focuses all elements in a list and put it on your functional crafting bench, you can compose it with the lens you already have that focuses on the student ID of a student enrollment record. Presto! You've just crafted a new traversal that focuses the student ID of every student enrollment record in a list of student enrollment records! It just so happens that I have our missing piece lying around: it's called `traversed`. In Haskell:
 
 ```haskell
-view                                          -- operation
-    (traversed . studentId)        -- optic
-    enrollmentRecord                -- data structure
+view                        -- operation
+    (traversed . studentId) -- optic
+    enrollmentRecord        -- data structure
 ```
 
 This is a mere drop in the ocean of what is possible with optics. They are an incredibly vast field of study, and the power they offer is unrivalled by nearly any other FP abstraction in the hands of an experienced practitioner.
